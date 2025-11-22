@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Page Fetcher</title>
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        input[type="url"] {
+            width: 70%;
+            padding: 10px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+        }
+        .output {
+            border: 1px solid #ddd;
+            padding: 15px;
+            background: #f8f9fa;
+            margin-top: 20px;
+            max-height: 500px;
+            overflow: auto;
+        }
+        .stats {
+            margin: 10px 0;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Web Page HTML Fetcher</h1>
+        
+        <div class="input-group">
+            <input type="url" id="urlInput" 
+                   placeholder="Enter URL (e.g., https://example.com)" 
+                   value="https://www.comercial-delta.com/">
+            <button onclick="fetchHTML()" id="fetchBtn">Fetch HTML</button>
+        </div>
+
+        <div class="stats" id="stats"></div>
+        
+        <div class="output">
+            <pre id="htmlOutput">HTML will appear here...</pre>
+        </div>
+    </div>
+
+    <script>
+        const urlInput = document.getElementById('urlInput');
+        const htmlOutput = document.getElementById('htmlOutput');
+        const fetchBtn = document.getElementById('fetchBtn');
+        const statsDiv = document.getElementById('stats');
+
+        async function fetchHTML() {
+            const url = urlInput.value.trim();
+            
+            if (!url) {
+                alert('Please enter a URL');
+                return;
+            }
+
+            // Validate URL format
+            try {
+                new URL(url);
+            } catch (e) {
+                alert('Please enter a valid URL');
+                return;
+            }
+
+            // Disable button during fetch
+            fetchBtn.disabled = true;
+            fetchBtn.textContent = 'Fetching...';
+            statsDiv.textContent = 'Fetching page...';
+            htmlOutput.textContent = 'Loading...';
+
+            try {
+                const startTime = Date.now();
+                
+                const result = await fetchPageHTML(url);
+                
+                const endTime = Date.now();
+                const fetchTime = endTime - startTime;
+
+                if (result.success) {
+                    statsDiv.textContent = `Fetched ${result.html.length} characters in ${fetchTime}ms from ${result.url}`;
+                    replaceHtmlPartialMatch('<img class="nav-header__image" src="https://http2.mlstatic.com/storage/mshops-appearance-api/images/62/663881662/logo-2023110215051428161.png" alt="COMERCIAL DELTA" itemprop="logo">', '<img class="nav-header__image" src="img/logo-2023110215051428161.png" alt="ENALCOMEX" itemprop="logo">');
+                    htmlOutput.textContent = result.html;
+                    
+                    // Optional: Syntax highlighting
+                    applyBasicSyntaxHighlighting(result.html);
+                } else {
+                    statsDiv.textContent = `Error: ${result.error}`;
+                    htmlOutput.textContent = `Failed to fetch HTML: ${result.error}`;
+                }
+            } catch (error) {
+                statsDiv.textContent = `Unexpected error: ${error.message}`;
+                htmlOutput.textContent = `Error: ${error.message}`;
+            } finally {
+                fetchBtn.disabled = false;
+                fetchBtn.textContent = 'Fetch HTML';
+            }
+        }
+function replaceHtmlPartialMatch(searchString, replacementHtml) {
+    const walker = document.createTreeWalker(
+        document.body,
+        NodeFilter.SHOW_ELEMENT,
+        null,
+        false
+    );
+    
+    let node;
+    const elementsToReplace = [];
+    
+    // First, collect all matching elements
+    while (node = walker.nextNode()) {
+        if (node.outerHTML.includes(searchString)) {
+            elementsToReplace.push(node);
+        }
+    }
+    
+    // Then replace them
+    elementsToReplace.forEach(element => {
+        element.outerHTML = replacementHtml;
+    });
+}
+        async function fetchPageHTML(url) {
+            try {
+                const response = await fetch(url, {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'text/html',
+                        // Some sites may require a user-agent
+                        'User-Agent': 'Mozilla/5.0 (compatible; HTML-Fetcher/1.0)',
+                          "X-PINGOTHER": "pingpong",
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+
+                const html = await response.text();
+                
+                return {
+                    success: true,
+                    html: html,
+                    url: response.url
+                };
+            } catch (error) {
+                return {
+                    success: false,
+                    error: error.message,
+                    html: null
+                };
+            }
+        }
+
+        function applyBasicSyntaxHighlighting(html) {
+            // Basic syntax highlighting for HTML
+            const highlighted = html
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/("([^"]*)")/g, '<span style="color: #d14">$1</span>')
+                .replace(/(&lt;\/?[a-zA-Z][^&gt;]*&gt;)/g, '<span style="color: #22863a">$1</span>')
+                .replace(/(&lt;!--.*?--&gt;)/g, '<span style="color: #6a737d">$1</span>');
+            
+            htmlOutput.innerHTML = highlighted;
+        }
+
+        // Allow Enter key to trigger fetch
+        urlInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                fetchHTML();
+            }
+        });
+    </script>
+</body>
+</html>
