@@ -122,6 +122,30 @@
         margin: 16px auto 0;
       }
     }
+
+    /* Ajuste sección beneficios (envío gratis / medio de pago) en CELULAR */
+    @media (max-width: 768px) {
+
+      /* Contenedor de los beneficios */
+      .ui-ms-shopping-info__items,
+      .ui-ms-shopping-info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      /* Cada tarjetita (envío gratis, medio de pago, etc.) */
+      .ui-ms-shopping-info__item {
+        width: 100% !important;
+        /* que use todo el ancho */
+        max-width: 320px;
+        /* para que no se haga gigante */
+        margin: 0 auto 24px;
+        /* centrado y con espacio abajo */
+        text-align: center;
+        /* texto centrado como en Delta */
+      }
+    }
   </style>
   <link rel="canonical" href="https://www.enalcomex.com" data-head-react="true" />
   <link rel="icon"
