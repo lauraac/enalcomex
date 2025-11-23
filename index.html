@@ -57,42 +57,27 @@
       src: url(https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-semibold.woff2) format("woff2"), url(https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-semibold.woff) format("woff")
     }
 
-    /* =============================================== */
-    /* 🟩 SECCIÓN “APROVECHA EL BENEFICIO…” EN CELULAR */
-    /* =============================================== */
+    /* 📱 Sección "Aprovecha / Elige tu medio / Recibe..." en CELULAR */
     @media (max-width: 768px) {
 
-      /* El contenedor se vuelve carrusel horizontal */
       .site-shopping-info .container {
         display: flex !important;
         flex-wrap: nowrap !important;
-        /* que no se bajen */
-        overflow-x: auto !important;
-        /* scroll horizontal */
+        overflow-x: auto;
         overflow-y: hidden;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
-        /* scroll suave iPhone */
-        width: 100% !important;
-        max-width: 100% !important;
-        box-sizing: border-box;
       }
 
-      /* Cada slide ocupa TODA la pantalla */
       .site-shopping-info .info-slide {
         flex: 0 0 100% !important;
-        /* base 100% */
-        width: 100% !important;
-        /* por si arriba le ponen 50% */
         max-width: 100% !important;
         scroll-snap-align: center;
-
         text-align: center;
         padding: 24px 16px;
         box-sizing: border-box;
       }
 
-      /* Centrar bien el ícono */
       .site-shopping-info .info-slide .img-container svg,
       .site-shopping-info .info-slide .img-container img {
         display: block;
