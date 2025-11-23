@@ -57,25 +57,20 @@
       src: url(https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-semibold.woff2) format("woff2"), url(https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-semibold.woff) format("woff")
     }
 
+    /* Carrusel en CELULAR: 2 productos por vista */
     .ui-ms-products-carousel .andes-carousel-snapped__wrapper {
       display: flex;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
     }
 
-    /* Cada tarjeta del carrusel */
     .ui-ms-products-carousel .andes-carousel-snapped__slide {
-      flex: 0 0 80% !important;
-      /* en cel: que ocupe 80% del ancho */
+      flex: 0 0 calc(50% - 12px) !important;
+      /* aprox. 2 por pantalla */
       scroll-snap-align: start;
     }
 
-    /* Que no se vea la barra fea en algunos navegadores */
-    .ui-ms-products-carousel .andes-carousel-snapped {
-      overflow: hidden;
-    }
-
-    /* En pantallas grandes (tablet/desktop) regresamos al 25% como el original */
+    /* En pantallas grandes (tablet/desktop) seguimos con 4 por fila */
     @media (min-width: 768px) {
       .ui-ms-products-carousel .andes-carousel-snapped__slide {
         flex: 0 0 calc(25% - 12px) !important;
