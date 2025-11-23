@@ -57,17 +57,15 @@
       src: url(https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-semibold.woff2) format("woff2"), url(https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-semibold.woff) format("woff")
     }
 
-    /* 1) Carrusel de REFRIGERADORES / productos (.recommendations) */
+    /* CARRUSEL DE PRODUCTOS: 2 tarjetas por vista en CELULAR */
     @media (max-width: 768px) {
-
-      /* Solo ajustamos el ancho de cada tarjeta: 2 por pantalla */
       .recommendations .andes-carousel-snapped__slide {
-        width: 50% !important;
-        max-width: 50% !important;
+        width: calc(50% - 12px) !important;
+        /* 2 por pantalla */
       }
     }
 
-    /* 2) SECCIÓN BENEFICIOS "APROVECHA / ELIGE / RECIBE" */
+    /* CARRUSEL DE BENEFICIOS EN CELULAR */
     @media (max-width: 768px) {
 
       /* Contenedor como carrusel horizontal */
@@ -75,12 +73,13 @@
         display: flex !important;
         flex-wrap: nowrap !important;
         overflow-x: auto;
+        /* scroll horizontal con el dedo */
         overflow-y: hidden;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
       }
 
-      /* Cada slide ocupa el 100% del ancho visible */
+      /* Cada slide ocupa toda la pantalla */
       .site-shopping-info .info-slide {
         flex: 0 0 100% !important;
         max-width: 100% !important;
@@ -91,6 +90,7 @@
         box-sizing: border-box;
       }
 
+      /* Centrar el ícono */
       .site-shopping-info .info-slide .img-container svg,
       .site-shopping-info .info-slide .img-container img {
         display: block;
