@@ -157,6 +157,58 @@
         text-align: center;
       }
     }
+
+    /* Carrusel de productos ENALCOMEX */
+    .andes-carousel-snapped.ui-ms-products-carousel .andes-carousel-snapped__wrapper {
+      display: flex;
+      flex-wrap: nowrap;
+      /* Que NO salten a otra fila */
+      overflow-x: auto;
+      /* Scroll horizontal */
+      scroll-behavior: smooth;
+      /* Desplazamiento suave */
+    }
+
+    /* Cada slide en fila, sin encogerse */
+    .andes-carousel-snapped.ui-ms-products-carousel .andes-carousel-snapped__slide {
+      flex: 0 0 auto;
+    }
+
+    /* Ocultar scrollbar (Chrome, Edge, Safari) */
+    .andes-carousel-snapped.ui-ms-products-carousel .andes-carousel-snapped__wrapper::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Ocultar scrollbar (Firefox y otros) */
+    .andes-carousel-snapped.ui-ms-products-carousel .andes-carousel-snapped__wrapper {
+      -ms-overflow-style: none;
+      /* IE / Edge antiguos */
+      scrollbar-width: none;
+      /* Firefox */
+    }
+
+    /* Reposicionar flecha izquierda */
+    section[aria-label="products-carousel"] .andes-carousel-snapped__control--previous {
+      left: 5px !important;
+      z-index: 10;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+
+    /* Reposicionar flecha derecha */
+    section[aria-label="products-carousel"] .andes-carousel-snapped__control--next {
+      right: 5px !important;
+      z-index: 10;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+
+    /* Estilo opcional para que ambas se vean bonitas */
+    section[aria-label="products-carousel"] .andes-carousel-snapped__control {
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+    }
   </style>
   <link rel="canonical" href="https://www.enalcomex.com" data-head-react="true" />
   <link rel="icon"
@@ -628,18 +680,7 @@
                       <div class="ui-ms-section-tabs-container">
                         <div class="ui-ms-tab-with-items ui-ms-tab-with-items--pilled">
                           <div class="andes-tabs__container andes-tabs__container--centered">
-                            <div class="andes-tabs__wrapper">
-                              <div class="andes-tabs andes-tabs--centered" role="tablist"><button
-                                  aria-controls=":Rjije:-tab-content-0" aria-disabled="false" aria-selected="true"
-                                  class="andes-tab andes-tab--centered andes-tab--first andes-tab--selected" href="#"
-                                  id=":Rjije:-tab-0" role="tab" tabindex="0">
-                                  <div class="andes-tab__link"><span>Más populares</span></div>
-                                </button><button aria-controls=":Rjije:-tab-content-1" aria-disabled="false"
-                                  aria-selected="false" class="andes-tab andes-tab--centered" href="#"
-                                  id=":Rjije:-tab-1" role="tab" tabindex="-1">
-                                  <div class="andes-tab__link"><span>Electrodomésticos</span></div>
-                                </button></div>
-                            </div>
+
                             <div class="andes-tabs__border"></div>
                             <div aria-labelledby=":Rjije:-tab-0" class="andes-tab-content" id=":Rjije:-tab-content-0"
                               role="tabpanel" tabindex="0">
@@ -844,7 +885,7 @@
                                             <div style="display:contents">
                                               <div
                                                 class="ui-item__wrapper items-per-row-4__wrapper original__wrapper with-installments__wrapper ui-item__wrapper--left-aligned ui-item__wrapper--desktop">
-                                                <a href="https://www.comercial-delta.com/lavadora-semiautomatica-mirage-blanca-hasta-16-kg-capacidad-practica-eficiente-y-resistente/p/MLM15778594#item_id=MLM2671136546&amp;component=tabbed_carrousel&amp;page_from=home&amp;custom_categories=false&amp;promotions=false"
+                                                <a href="./listado/electrodomesticos/lavado/lavadora3.html"
                                                   class="ui-item items-per-row-4 original with-installments"
                                                   itemscope="" itemType="http://schema.org/Product">
                                                   <div class="ui-item__image-container">
@@ -874,7 +915,7 @@
                                                           carrito</span></button></div>
                                                   </div>
                                                   <meta itemProp="url"
-                                                    content="https://www.comercial-delta.com/lavadora-semiautomatica-mirage-blanca-hasta-16-kg-capacidad-practica-eficiente-y-resistente/p/MLM15778594#item_id=MLM2671136546&amp;component=tabbed_carrousel&amp;page_from=home&amp;custom_categories=false&amp;promotions=false" />
+                                                    content="./listado/electrodomesticos/lavado/lavadora3.html" />
                                                   <meta itemProp="productID" content="MLM2671136546" />
                                                 </a>
                                               </div>
@@ -887,7 +928,7 @@
                                             <div style="display:contents">
                                               <div
                                                 class="ui-item__wrapper items-per-row-4__wrapper original__wrapper with-installments__wrapper ui-item__wrapper--left-aligned ui-item__wrapper--desktop">
-                                                <a href="https://www.comercial-delta.com/MLM-1972443463-lavadora-semiautomatica-de-dos-tinas-mirage-blanca-13kg-_JM#item_id=MLM1972443463&amp;component=tabbed_carrousel&amp;page_from=home&amp;custom_categories=false&amp;promotions=false"
+                                                <a href="./listado/electrodomesticos/lavado/lavadora4.html"
                                                   class="ui-item items-per-row-4 original with-installments"
                                                   itemscope="" itemType="http://schema.org/Product">
                                                   <div class="ui-item__image-container">
@@ -916,7 +957,7 @@
                                                           carrito</span></button></div>
                                                   </div>
                                                   <meta itemProp="url"
-                                                    content="https://www.comercial-delta.com/MLM-1972443463-lavadora-semiautomatica-de-dos-tinas-mirage-blanca-13kg-_JM#item_id=MLM1972443463&amp;component=tabbed_carrousel&amp;page_from=home&amp;custom_categories=false&amp;promotions=false" />
+                                                    content="./listado/electrodomesticos/lavado/lavadora4.html" />
                                                   <meta itemProp="productID" content="MLM1972443463" />
                                                 </a>
                                               </div>
@@ -929,7 +970,7 @@
                                             <div style="display:contents">
                                               <div
                                                 class="ui-item__wrapper items-per-row-4__wrapper original__wrapper with-installments__wrapper ui-item__wrapper--left-aligned ui-item__wrapper--desktop">
-                                                <a href="refrigerador/index.html"
+                                                <a href="./listado/electrodomesticos/refrigerador/refrigerador3.html"
                                                   class="ui-item items-per-row-4 original with-installments"
                                                   itemscope="" itemType="http://schema.org/Product">
                                                   <div class="ui-item__image-container">
@@ -958,7 +999,7 @@
                                                           carrito</span></button></div>
                                                   </div>
                                                   <meta itemProp="url"
-                                                    content="https://www.comercial-delta.com/MLM-1972356613-refrigerador-hisense-7-pies-plateado-_JM#item_id=MLM1972356613&amp;component=tabbed_carrousel&amp;page_from=home&amp;custom_categories=false&amp;promotions=false" />
+                                                    content="./listado/electrodomesticos/refrigerador/refrigerador3.html" />
                                                   <meta itemProp="productID" content="MLM1972356613" />
                                                 </a>
                                               </div>
@@ -971,7 +1012,7 @@
                                             <div style="display:contents">
                                               <div
                                                 class="ui-item__wrapper items-per-row-4__wrapper original__wrapper with-installments__wrapper ui-item__wrapper--left-aligned ui-item__wrapper--desktop">
-                                                <a href="https://www.comercial-delta.com/MLM-1972355465-lavadora-semiautomatica-hisense-de-2-tinas-blanca-18kg-_JM#item_id=MLM1972355465&amp;component=tabbed_carrousel&amp;page_from=home&amp;custom_categories=false&amp;promotions=false"
+                                                <a href="./listado/electrodomesticos/lavado/lavadora5.html"
                                                   class="ui-item items-per-row-4 original with-installments"
                                                   itemscope="" itemType="http://schema.org/Product">
                                                   <div class="ui-item__image-container">
@@ -1000,7 +1041,7 @@
                                                           carrito</span></button></div>
                                                   </div>
                                                   <meta itemProp="url"
-                                                    content="https://www.comercial-delta.com/MLM-1972355465-lavadora-semiautomatica-hisense-de-2-tinas-blanca-18kg-_JM#item_id=MLM1972355465&amp;component=tabbed_carrousel&amp;page_from=home&amp;custom_categories=false&amp;promotions=false" />
+                                                    content="./listado/electrodomesticos/lavado/lavadora5.html" />
                                                   <meta itemProp="productID" content="MLM1972355465" />
                                                 </a>
                                               </div>
@@ -1013,7 +1054,7 @@
                                             <div style="display:contents">
                                               <div
                                                 class="ui-item__wrapper items-per-row-4__wrapper original__wrapper with-installments__wrapper ui-item__wrapper--left-aligned ui-item__wrapper--desktop">
-                                                <a href="https://www.comercial-delta.com/MLM-1972405661-lavadora-semiautomatica-de-doble-tina-mirage-blanca-16kg-_JM#item_id=MLM1972405661&amp;component=tabbed_carrousel&amp;page_from=home&amp;custom_categories=false&amp;promotions=false"
+                                                <a href="./listado/electrodomesticos/lavado/lavadora3.html"
                                                   class="ui-item items-per-row-4 original with-installments"
                                                   itemscope="" itemType="http://schema.org/Product">
                                                   <div class="ui-item__image-container">
@@ -1042,7 +1083,7 @@
                                                           carrito</span></button></div>
                                                   </div>
                                                   <meta itemProp="url"
-                                                    content="https://www.comercial-delta.com/MLM-1972405661-lavadora-semiautomatica-de-doble-tina-mirage-blanca-16kg-_JM#item_id=MLM1972405661&amp;component=tabbed_carrousel&amp;page_from=home&amp;custom_categories=false&amp;promotions=false" />
+                                                    content="./listado/electrodomesticos/lavado/lavadora3.html" />
                                                   <meta itemProp="productID" content="MLM1972405661" />
                                                 </a>
                                               </div>
@@ -1055,7 +1096,7 @@
                                             <div style="display:contents">
                                               <div
                                                 class="ui-item__wrapper items-per-row-4__wrapper original__wrapper with-installments__wrapper ui-item__wrapper--left-aligned ui-item__wrapper--desktop">
-                                                <a href="https://www.comercial-delta.com/MLM-840099859-colchon-restonic-matrimonial-mod-hilss-_JM#item_id=MLM840099859&amp;component=tabbed_carrousel&amp;page_from=home&amp;custom_categories=false&amp;promotions=false"
+                                                <a href="./listado/electrodomesticos/colchon/colchon2.html"
                                                   class="ui-item items-per-row-4 original with-installments"
                                                   itemscope="" itemType="http://schema.org/Product">
                                                   <div class="ui-item__image-container">
@@ -1084,7 +1125,7 @@
                                                           carrito</span></button></div>
                                                   </div>
                                                   <meta itemProp="url"
-                                                    content="https://www.comercial-delta.com/MLM-840099859-colchon-restonic-matrimonial-mod-hilss-_JM#item_id=MLM840099859&amp;component=tabbed_carrousel&amp;page_from=home&amp;custom_categories=false&amp;promotions=false" />
+                                                    content="./listado/electrodomesticos/colchon/colchon2.html" />
                                                   <meta itemProp="productID" content="MLM840099859" />
                                                 </a>
                                               </div>
@@ -1097,7 +1138,7 @@
                                             <div style="display:contents">
                                               <div
                                                 class="ui-item__wrapper items-per-row-4__wrapper original__wrapper with-installments__wrapper ui-item__wrapper--left-aligned ui-item__wrapper--desktop">
-                                                <a href="https://www.comercial-delta.com/MLM-1972393571-lavadora-automatica-mirage-de-22kg-_JM#item_id=MLM1972393571&amp;component=tabbed_carrousel&amp;page_from=home&amp;custom_categories=false&amp;promotions=false"
+                                                <a href="./listado/electrodomesticos/lavado/lavadora7.html"
                                                   class="ui-item items-per-row-4 original with-installments"
                                                   itemscope="" itemType="http://schema.org/Product">
                                                   <div class="ui-item__image-container">
@@ -1126,7 +1167,7 @@
                                                           carrito</span></button></div>
                                                   </div>
                                                   <meta itemProp="url"
-                                                    content="https://www.comercial-delta.com/MLM-1972393571-lavadora-automatica-mirage-de-22kg-_JM#item_id=MLM1972393571&amp;component=tabbed_carrousel&amp;page_from=home&amp;custom_categories=false&amp;promotions=false" />
+                                                    content="./listado/electrodomesticos/lavado/lavadora7.html" />
                                                   <meta itemProp="productID" content="MLM1972393571" />
                                                 </a>
                                               </div>
@@ -1139,7 +1180,7 @@
                                             <div style="display:contents">
                                               <div
                                                 class="ui-item__wrapper items-per-row-4__wrapper original__wrapper with-installments__wrapper ui-item__wrapper--left-aligned ui-item__wrapper--desktop">
-                                                <a href="https://www.comercial-delta.com/MLM-1964637377-colchon-spring-air-modelo-niza-king-size-_JM#item_id=MLM1964637377&amp;component=tabbed_carrousel&amp;page_from=home&amp;custom_categories=false&amp;promotions=false"
+                                                <a href="./listado/electrodomesticos/colchon/colchon3.html"
                                                   class="ui-item items-per-row-4 original with-installments"
                                                   itemscope="" itemType="http://schema.org/Product">
                                                   <div class="ui-item__image-container">
@@ -1168,7 +1209,7 @@
                                                           carrito</span></button></div>
                                                   </div>
                                                   <meta itemProp="url"
-                                                    content="https://www.comercial-delta.com/MLM-1964637377-colchon-spring-air-modelo-niza-king-size-_JM#item_id=MLM1964637377&amp;component=tabbed_carrousel&amp;page_from=home&amp;custom_categories=false&amp;promotions=false" />
+                                                    content="./listado/electrodomesticos/colchon/colchon3.html" />
                                                   <meta itemProp="productID" content="MLM1964637377" />
                                                 </a>
                                               </div>
@@ -1181,7 +1222,7 @@
                                             <div style="display:contents">
                                               <div
                                                 class="ui-item__wrapper items-per-row-4__wrapper original__wrapper with-installments__wrapper ui-item__wrapper--left-aligned ui-item__wrapper--desktop">
-                                                <a href="https://www.comercial-delta.com/MLM-2306800412-colchon-spring-air-modelo-niza-matrimonial-_JM#item_id=MLM2306800412&amp;component=tabbed_carrousel&amp;page_from=home&amp;custom_categories=false&amp;promotions=false"
+                                                <a href="./listado/electrodomesticos/colchon/colchon4.html"
                                                   class="ui-item items-per-row-4 original with-installments"
                                                   itemscope="" itemType="http://schema.org/Product">
                                                   <div class="ui-item__image-container">
@@ -1210,7 +1251,7 @@
                                                           carrito</span></button></div>
                                                   </div>
                                                   <meta itemProp="url"
-                                                    content="https://www.comercial-delta.com/MLM-2306800412-colchon-spring-air-modelo-niza-matrimonial-_JM#item_id=MLM2306800412&amp;component=tabbed_carrousel&amp;page_from=home&amp;custom_categories=false&amp;promotions=false" />
+                                                    content="./listado/electrodomesticos/colchon/colchon4.html" />
                                                   <meta itemProp="productID" content="MLM2306800412" />
                                                 </a>
                                               </div>
@@ -1223,7 +1264,7 @@
                                             <div style="display:contents">
                                               <div
                                                 class="ui-item__wrapper items-per-row-4__wrapper original__wrapper with-installments__wrapper ui-item__wrapper--left-aligned ui-item__wrapper--desktop">
-                                                <a href="https://www.comercial-delta.com/MLM-2650061446-estufa-iem-profesional-a-gas-4-quemadores-negra-_JM#item_id=MLM2650061446&amp;component=tabbed_carrousel&amp;page_from=home&amp;custom_categories=false&amp;promotions=false"
+                                                <a href="./listado/electrodomesticos/coccion/coccion6.html"
                                                   class="ui-item items-per-row-4 original with-installments"
                                                   itemscope="" itemType="http://schema.org/Product">
                                                   <div class="ui-item__image-container">
@@ -1252,7 +1293,7 @@
                                                           carrito</span></button></div>
                                                   </div>
                                                   <meta itemProp="url"
-                                                    content="https://www.comercial-delta.com/MLM-2650061446-estufa-iem-profesional-a-gas-4-quemadores-negra-_JM#item_id=MLM2650061446&amp;component=tabbed_carrousel&amp;page_from=home&amp;custom_categories=false&amp;promotions=false" />
+                                                    content="./listado/electrodomesticos/coccion/coccion6.html" />
                                                   <meta itemProp="productID" content="MLM2650061446" />
                                                 </a>
                                               </div>
@@ -1265,7 +1306,7 @@
                                             <div style="display:contents">
                                               <div
                                                 class="ui-item__wrapper items-per-row-4__wrapper original__wrapper with-installments__wrapper ui-item__wrapper--left-aligned ui-item__wrapper--desktop">
-                                                <a href="https://www.comercial-delta.com/MLM-1971868095-estufa-mabe-de-6-quemadores-cubierta-acero-inoxidable-_JM#item_id=MLM1971868095&amp;component=tabbed_carrousel&amp;page_from=home&amp;custom_categories=false&amp;promotions=false"
+                                                <a href="./listado/electrodomesticos/coccion/coccion4.html"
                                                   class="ui-item items-per-row-4 original with-installments"
                                                   itemscope="" itemType="http://schema.org/Product">
                                                   <div class="ui-item__image-container">
@@ -1294,7 +1335,7 @@
                                                           carrito</span></button></div>
                                                   </div>
                                                   <meta itemProp="url"
-                                                    content="https://www.comercial-delta.com/MLM-1971868095-estufa-mabe-de-6-quemadores-cubierta-acero-inoxidable-_JM#item_id=MLM1971868095&amp;component=tabbed_carrousel&amp;page_from=home&amp;custom_categories=false&amp;promotions=false" />
+                                                    content="./listado/electrodomesticos/coccion/coccion4.html" />
                                                   <meta itemProp="productID" content="MLM1971868095" />
                                                 </a>
                                               </div>
@@ -1307,7 +1348,7 @@
                                             <div style="display:contents">
                                               <div
                                                 class="ui-item__wrapper items-per-row-4__wrapper original__wrapper with-installments__wrapper ui-item__wrapper--left-aligned ui-item__wrapper--desktop">
-                                                <a href="https://www.comercial-delta.com/MLM-1970263553-colchon-restonic-black-matrimonial-_JM#item_id=MLM1970263553&amp;component=tabbed_carrousel&amp;page_from=home&amp;custom_categories=false&amp;promotions=false"
+                                                <a href="./listado/electrodomesticos/colchon/colchon5.html"
                                                   class="ui-item items-per-row-4 original with-installments"
                                                   itemscope="" itemType="http://schema.org/Product">
                                                   <div class="ui-item__image-container">
@@ -1336,7 +1377,7 @@
                                                           carrito</span></button></div>
                                                   </div>
                                                   <meta itemProp="url"
-                                                    content="https://www.comercial-delta.com/MLM-1970263553-colchon-restonic-black-matrimonial-_JM#item_id=MLM1970263553&amp;component=tabbed_carrousel&amp;page_from=home&amp;custom_categories=false&amp;promotions=false" />
+                                                    content="./listado/electrodomesticos/colchon/colchon5.html" />
                                                   <meta itemProp="productID" content="MLM1970263553" />
                                                 </a>
                                               </div>
@@ -1349,7 +1390,7 @@
                                             <div style="display:contents">
                                               <div
                                                 class="ui-item__wrapper items-per-row-4__wrapper original__wrapper with-installments__wrapper ui-item__wrapper--left-aligned ui-item__wrapper--desktop">
-                                                <a href="https://www.comercial-delta.com/MLM-2650189036-estufa-iem-a-gas-6-quemadores-con-encendido-electronico-_JM#item_id=MLM2650189036&amp;component=tabbed_carrousel&amp;page_from=home&amp;custom_categories=false&amp;promotions=false"
+                                                <a href="./listado/electrodomesticos/coccion/coccion7.html"
                                                   class="ui-item items-per-row-4 original with-installments"
                                                   itemscope="" itemType="http://schema.org/Product">
                                                   <div class="ui-item__image-container">
@@ -1378,7 +1419,7 @@
                                                           carrito</span></button></div>
                                                   </div>
                                                   <meta itemProp="url"
-                                                    content="https://www.comercial-delta.com/MLM-2650189036-estufa-iem-a-gas-6-quemadores-con-encendido-electronico-_JM#item_id=MLM2650189036&amp;component=tabbed_carrousel&amp;page_from=home&amp;custom_categories=false&amp;promotions=false" />
+                                                    content="./listado/electrodomesticos/coccion/coccion7.html" />
                                                   <meta itemProp="productID" content="MLM2650189036" />
                                                 </a>
                                               </div>
@@ -1391,7 +1432,7 @@
                                             <div style="display:contents">
                                               <div
                                                 class="ui-item__wrapper items-per-row-4__wrapper original__wrapper with-installments__wrapper ui-item__wrapper--left-aligned ui-item__wrapper--desktop">
-                                                <a href="https://www.comercial-delta.com/MLM-1972302433-estufa-iem-profesional-a-gas-de-6-quemadores-color-negro-_JM#item_id=MLM1972302433&amp;component=tabbed_carrousel&amp;page_from=home&amp;custom_categories=false&amp;promotions=false"
+                                                <a href="./listado/electrodomesticos/coccion/coccion5.html"
                                                   class="ui-item items-per-row-4 original with-installments"
                                                   itemscope="" itemType="http://schema.org/Product">
                                                   <div class="ui-item__image-container">
@@ -1420,7 +1461,7 @@
                                                           carrito</span></button></div>
                                                   </div>
                                                   <meta itemProp="url"
-                                                    content="https://www.comercial-delta.com/MLM-1972302433-estufa-iem-profesional-a-gas-de-6-quemadores-color-negro-_JM#item_id=MLM1972302433&amp;component=tabbed_carrousel&amp;page_from=home&amp;custom_categories=false&amp;promotions=false" />
+                                                    content="./listado/electrodomesticos/coccion/coccion5.html" />
                                                   <meta itemProp="productID" content="MLM1972302433" />
                                                 </a>
                                               </div>
@@ -1433,7 +1474,7 @@
                                             <div style="display:contents">
                                               <div
                                                 class="ui-item__wrapper items-per-row-4__wrapper original__wrapper with-installments__wrapper ui-item__wrapper--left-aligned ui-item__wrapper--desktop">
-                                                <a href="https://www.comercial-delta.com/MLM-1971830225-estufa-mabe-de-6-quemadores-con-encendido-electronico-_JM#item_id=MLM1971830225&amp;component=tabbed_carrousel&amp;page_from=home&amp;custom_categories=false&amp;promotions=false"
+                                                <a href="./listado/electrodomesticos/coccion/coccion8.html"
                                                   class="ui-item items-per-row-4 original with-installments"
                                                   itemscope="" itemType="http://schema.org/Product">
                                                   <div class="ui-item__image-container">
@@ -1462,7 +1503,7 @@
                                                           carrito</span></button></div>
                                                   </div>
                                                   <meta itemProp="url"
-                                                    content="https://www.comercial-delta.com/MLM-1971830225-estufa-mabe-de-6-quemadores-con-encendido-electronico-_JM#item_id=MLM1971830225&amp;component=tabbed_carrousel&amp;page_from=home&amp;custom_categories=false&amp;promotions=false" />
+                                                    content="./listado/electrodomesticos/coccion/coccion8.html" />
                                                   <meta itemProp="productID" content="MLM1971830225" />
                                                 </a>
                                               </div>
@@ -1475,7 +1516,7 @@
                                             <div style="display:contents">
                                               <div
                                                 class="ui-item__wrapper items-per-row-4__wrapper original__wrapper with-installments__wrapper ui-item__wrapper--left-aligned ui-item__wrapper--desktop">
-                                                <a href="https://www.comercial-delta.com/MLM-2611186624-colchon-spring-air-modelo-niza-individual-_JM#item_id=MLM2611186624&amp;component=tabbed_carrousel&amp;page_from=home&amp;custom_categories=false&amp;promotions=false"
+                                                <a href="./listado/electrodomesticos/colchon/colchon6.html"
                                                   class="ui-item items-per-row-4 original with-installments"
                                                   itemscope="" itemType="http://schema.org/Product">
                                                   <div class="ui-item__image-container">
@@ -1504,7 +1545,7 @@
                                                           carrito</span></button></div>
                                                   </div>
                                                   <meta itemProp="url"
-                                                    content="https://www.comercial-delta.com/MLM-2611186624-colchon-spring-air-modelo-niza-individual-_JM#item_id=MLM2611186624&amp;component=tabbed_carrousel&amp;page_from=home&amp;custom_categories=false&amp;promotions=false" />
+                                                    content="./listado/electrodomesticos/colchon/colchon6.html" />
                                                   <meta itemProp="productID" content="MLM2611186624" />
                                                 </a>
                                               </div>
@@ -2360,6 +2401,114 @@
       }
     })(window, document, 'trustedTypes');</script>
 </body>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Solo este carrusel
+    const carouselSection = document.querySelector('section[aria-label="products-carousel"]');
+    if (!carouselSection) return;
+
+    const wrapper = carouselSection.querySelector(".andes-carousel-snapped__wrapper");
+    const prevBtn = carouselSection.querySelector('[data-andes-carousel-snapped-control="previous"]');
+    const nextBtn = carouselSection.querySelector('[data-andes-carousel-snapped-control="next"]');
+    const dots = Array.from(
+      carouselSection.querySelectorAll("[data-andes-carousel-snapped-pagination-item='true']")
+    );
+
+    if (!wrapper || !prevBtn || !nextBtn || dots.length === 0) return;
+
+    const totalPages = dots.length; // 5 bolitas = 5 "páginas"
+    let currentPage = 0;
+
+    function updateButtons() {
+      // Botón anterior
+      if (currentPage === 0) {
+        prevBtn.classList.add("ui-ms-products-carousel__control--disabled");
+        prevBtn.setAttribute("disabled", "disabled");
+      } else {
+        prevBtn.classList.remove("ui-ms-products-carousel__control--disabled");
+        prevBtn.removeAttribute("disabled");
+      }
+
+      // Botón siguiente
+      if (currentPage === totalPages - 1) {
+        nextBtn.classList.add("ui-ms-products-carousel__control--disabled");
+        nextBtn.setAttribute("disabled", "disabled");
+      } else {
+        nextBtn.classList.remove("ui-ms-products-carousel__control--disabled");
+        nextBtn.removeAttribute("disabled");
+      }
+    }
+
+    function updateDots() {
+      dots.forEach((li, index) => {
+        if (index === currentPage) {
+          li.setAttribute("data-andes-carousel-snapped-pagination-item-active", "true");
+        } else {
+          li.setAttribute("data-andes-carousel-snapped-pagination-item-active", "false");
+        }
+      });
+    }
+
+    function goToPage(page) {
+      const maxScroll = wrapper.scrollWidth - wrapper.clientWidth;
+      const pagesMinusOne = Math.max(totalPages - 1, 1);
+
+      currentPage = Math.min(Math.max(page, 0), totalPages - 1);
+
+      const ratio = currentPage / pagesMinusOne;
+      const targetScroll = maxScroll * ratio;
+
+      wrapper.scrollTo({
+        left: targetScroll,
+        behavior: "smooth",
+      });
+
+      updateButtons();
+      updateDots();
+    }
+
+    // Flecha siguiente
+    nextBtn.addEventListener("click", function () {
+      goToPage(currentPage + 1);
+    });
+
+    // Flecha anterior
+    prevBtn.addEventListener("click", function () {
+      goToPage(currentPage - 1);
+    });
+
+    // Click en las bolitas
+    dots.forEach((li, index) => {
+      const btn = li.querySelector("button");
+      if (!btn) return;
+      btn.addEventListener("click", function () {
+        goToPage(index);
+      });
+    });
+
+    // Si el usuario hace scroll con el mouse o con el dedo, actualizar bolitas
+    let scrollTimeout;
+    wrapper.addEventListener("scroll", function () {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(function () {
+        const maxScroll = wrapper.scrollWidth - wrapper.clientWidth;
+        const pagesMinusOne = Math.max(totalPages - 1, 1);
+        const ratio = maxScroll > 0 ? wrapper.scrollLeft / maxScroll : 0;
+        const newPage = Math.round(ratio * pagesMinusOne);
+
+        if (newPage !== currentPage) {
+          currentPage = newPage;
+          updateButtons();
+          updateDots();
+        }
+      }, 100);
+    });
+
+    // Estado inicial
+    goToPage(0);
+  });
+</script>
+
 <script
   nonce="K7/S/un8bV1iK7OcteXDaw==">(function (n, a) { if (n) { n.addRelease('mshops-web-home', '2019.96.10-shops'); n.setApplicationVersion('2019.96.10-shops'); n[a]('nordicVersion', '8.28.0'); n[a]('frontend_session_id', '23c8ea62-f29f-4801-9bbe-25a9d60c3a26'); } })(window.newrelic, 'setCustomAttribute')</script>
 
