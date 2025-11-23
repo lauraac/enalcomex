@@ -76,6 +76,14 @@
         flex: 0 0 calc(25% - 12px) !important;
       }
     }
+
+    /* Reducir lo largo de las tarjetas en celular */
+    .ui-ms-products-carousel .andes-carousel-snapped__slide img {
+      height: 160px;
+      /* ↓ ajusta esta altura a tu gusto */
+      object-fit: contain;
+      /* mantiene la imagen completa sin deformarse */
+    }
   </style>
   <link rel="canonical" href="https://www.enalcomex.com" data-head-react="true" />
   <link rel="icon"
