@@ -91,6 +91,32 @@
       .recommendations .ui-ms-products-carousel__control {
         display: none !important;
       }
+
+      /* contenedor de los ítems de esa sección */
+      .shopping-info .content-list,
+      .shopping-info .content-list-desktop,
+      .shopping-info .content-list__items {
+        display: flex;
+        flex-direction: column;
+        /* uno debajo del otro */
+        align-items: center;
+        text-align: center;
+      }
+
+      /* cada “tarjeta” de texto + icono */
+      .shopping-info .content-list__item {
+        width: 100%;
+        max-width: 280px;
+        /* no tan ancho, se ve más lindo */
+        margin: 0 auto 24px;
+      }
+
+      /* por si el icono queda chueco */
+      .shopping-info .content-list__item img,
+      .shopping-info .content-list__item svg {
+        display: block;
+        margin: 16px auto 0;
+      }
     }
   </style>
   <link rel="canonical" href="https://www.enalcomex.com" data-head-react="true" />
