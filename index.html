@@ -92,37 +92,40 @@
     /* =============================================== */
     /* 🟩 AJUSTE SECCIÓN “APROVECHA EL BENEFICIO…”     */
     /* =============================================== */
-    /* Beneficios (envío gratis / medio de pago / etc.) en CELULAR: 1 por pantalla */
+    /* 🛒 Sección beneficios: 1 por pantalla en CELULAR */
     @media (max-width: 768px) {
 
-      /* Contenedor del carrusel de beneficios */
-      .ui-ms-shopping-info__items {
-        display: flex !important;
-        overflow-x: auto !important;
-        /* scroll horizontal con el dedo */
+      /* Contenedor de los beneficios => carrusel horizontal */
+      .shopping-info .ui-ms-shopping-info__items {
+        display: flex;
+        overflow-x: auto;
         overflow-y: hidden;
+        scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
         /* scroll suave en iPhone */
-        scroll-snap-type: x mandatory;
-        /* que “encaje” cada slide */
+        padding: 0 16px;
       }
 
-      /* Cada beneficio (tarjeta) */
-      .ui-ms-shopping-info__item {
+      /* Cada tarjeta (envío gratis / medio de pago / etc.) */
+      .shopping-info .ui-ms-shopping-info__item {
         flex: 0 0 100% !important;
-        /* ocupa el 100% del ancho de la pantalla */
+        /* ocupa TODO el ancho visible */
         max-width: 100% !important;
         scroll-snap-align: center;
-        /* se centra al terminar el scroll */
         text-align: center;
-        /* texto centrado */
-        margin: 0 auto;
-        /* centrado por si acaso */
+        padding: 24px 12px;
       }
 
-      /* Iconos centrados */
-      .ui-ms-shopping-info__item img,
-      .ui-ms-shopping-info__item svg {
+      /* Título más cómodo de leer */
+      .shopping-info .ui-ms-shopping-info__item h2,
+      .shopping-info .ui-ms-shopping-info__item h3 {
+        font-size: 18px;
+        line-height: 1.3;
+      }
+
+      /* Iconito centrado */
+      .shopping-info .ui-ms-shopping-info__item svg,
+      .shopping-info .ui-ms-shopping-info__item img {
         display: block;
         margin: 16px auto 0;
       }
