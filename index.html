@@ -60,48 +60,24 @@
     /* 1) Carrusel de REFRIGERADORES / productos (.recommendations) */
     @media (max-width: 768px) {
 
-      /* El “viewport” del carrusel: que se pueda desplazar con el dedo */
-      .recommendations .andes-carousel-snapped__viewport {
-        overflow-x: auto !important;
-        overflow-y: hidden;
-        -webkit-overflow-scrolling: touch;
-        /* suave en iPhone */
-        scroll-snap-type: x mandatory;
-        /* que “encaje” cada slide */
-      }
-
-      /* La lista interna se vuelve una fila horizontal */
-      .recommendations .andes-carousel-snapped__wrapper {
-        display: inline-flex !important;
-      }
-
-      /* Cada tarjeta: 2 por pantalla */
+      /* Solo ajustamos el ancho de cada tarjeta: 2 por pantalla */
       .recommendations .andes-carousel-snapped__slide {
-        flex: 0 0 50% !important;
+        width: 50% !important;
         max-width: 50% !important;
-        scroll-snap-align: start;
       }
     }
 
-
-    /* ===================================================== */
-    /* 2) SECCIÓN BENEFICIOS "APROVECHA / ELIGE / RECIBE"    */
-    /*    → Cada .info-slide ocupa TODA la pantalla          */
-    /*    → Se desliza con el dedo de lado a lado            */
-    /* ===================================================== */
+    /* 2) SECCIÓN BENEFICIOS "APROVECHA / ELIGE / RECIBE" */
     @media (max-width: 768px) {
 
       /* Contenedor como carrusel horizontal */
       .site-shopping-info .container {
         display: flex !important;
         flex-wrap: nowrap !important;
-        /* que no se vayan abajo */
         overflow-x: auto;
-        /* scroll horizontal */
         overflow-y: hidden;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
-        /* suave en iPhone */
       }
 
       /* Cada slide ocupa el 100% del ancho visible */
@@ -115,7 +91,6 @@
         box-sizing: border-box;
       }
 
-      /* Centrar icono */
       .site-shopping-info .info-slide .img-container svg,
       .site-shopping-info .info-slide .img-container img {
         display: block;
