@@ -252,6 +252,19 @@
         margin: 0 auto;
       }
     }
+
+    @media (max-width: 768px) {
+      .estufas-img-mobile {
+        display: block !important;
+        width: 95% !important;
+        /* antes era 80% → ahora casi toda la pantalla */
+        max-width: 450px !important;
+        /* más grande sin romper diseño */
+        height: auto !important;
+        margin: 0 auto 20px auto;
+        /* centrada con espacio abajo */
+      }
+    }
   </style>
   <link rel="canonical" href="https://www.enalcomex.com" data-head-react="true" />
   <link rel="icon"
