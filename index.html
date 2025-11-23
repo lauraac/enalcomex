@@ -92,42 +92,39 @@
     /* =============================================== */
     /* 🟩 AJUSTE SECCIÓN “APROVECHA EL BENEFICIO…”     */
     /* =============================================== */
-    /* CARRUSEL EN CELULAR: 1 PRODUCTO Y DESLIZA A LA DERECHA */
+    /* Beneficios (envío gratis / medio de pago / etc.) en CELULAR: 1 por pantalla */
     @media (max-width: 768px) {
 
-      /* El carrusel se hace scrolleable horizontalmente */
-      .recommendations .andes-carousel-snapped.ui-ms-products-carousel {
+      /* Contenedor del carrusel de beneficios */
+      .ui-ms-shopping-info__items {
+        display: flex !important;
         overflow-x: auto !important;
+        /* scroll horizontal con el dedo */
         overflow-y: hidden;
         -webkit-overflow-scrolling: touch;
-        scroll-behavior: smooth;
+        /* scroll suave en iPhone */
         scroll-snap-type: x mandatory;
-        /* que “encaje” cada tarjeta */
+        /* que “encaje” cada slide */
       }
 
-      /* Las slides van en una sola fila, sin saltar de línea */
-      .recommendations .andes-carousel-snapped__wrapper {
-        display: flex !important;
-        flex-wrap: nowrap !important;
-      }
-
-      /* Cada slide ocupa toda la pantalla (una por vista) */
-      .recommendations .andes-carousel-snapped__slide {
+      /* Cada beneficio (tarjeta) */
+      .ui-ms-shopping-info__item {
         flex: 0 0 100% !important;
+        /* ocupa el 100% del ancho de la pantalla */
         max-width: 100% !important;
         scroll-snap-align: center;
-        padding: 0 8px;
-        /* un poco de aire a los lados */
+        /* se centra al terminar el scroll */
+        text-align: center;
+        /* texto centrado */
+        margin: 0 auto;
+        /* centrado por si acaso */
       }
 
-      /* Por si alguna tarjeta interna tiene ancho raro */
-      .recommendations .ui-item__wrapper {
-        width: 100% !important;
-      }
-
-      /* Opcional: ocultar flechas en móvil */
-      .recommendations .ui-ms-products-carousel__control {
-        display: none !important;
+      /* Iconos centrados */
+      .ui-ms-shopping-info__item img,
+      .ui-ms-shopping-info__item svg {
+        display: block;
+        margin: 16px auto 0;
       }
     }
   </style>
