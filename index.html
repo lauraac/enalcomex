@@ -258,11 +258,66 @@
         display: block !important;
         width: 95% !important;
         /* antes era 80% → ahora casi toda la pantalla */
-        max-width: 650px !important;
+        max-width: 450px !important;
         /* más grande sin romper diseño */
         height: auto !important;
         margin: 0 auto 20px auto;
         /* centrada con espacio abajo */
+      }
+    }
+
+    /* Por defecto (WEB): solo imagen horizontal de Estufas */
+    .estufas-img-mobile {
+      display: none;
+    }
+
+    .estufas-img-desktop {
+      display: block;
+    }
+
+    /* 📱 Versión CELULAR */
+    @media (max-width: 768px) {
+
+      /* Apilar cada tarjeta una debajo de otra */
+      .content-list__container--dynamic .content-list__elements-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 32px;
+      }
+
+      /* Dentro de cada tarjeta: imagen arriba, texto abajo */
+      .content-list__container--dynamic .content-element {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+      }
+
+      .content-list__container--dynamic .content-element__img-container {
+        width: 100% !important;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 12px;
+      }
+
+      .content-list__container--dynamic .content-element__image {
+        width: 80% !important;
+        max-width: 350px;
+        height: auto !important;
+        display: block;
+      }
+
+      /* Estufas: usar la imagen vertical en cel y ocultar la horizontal */
+      .estufas-img-desktop {
+        display: none !important;
+      }
+
+      .estufas-img-mobile {
+        display: block !important;
+        width: 90% !important;
+        max-width: 420px !important;
+        height: auto !important;
+        margin: 0 auto 12px auto;
       }
     }
   </style>
@@ -1813,24 +1868,23 @@
               <div class="content-list__container content-list__container--dynamic">
                 <div class="content-list__element content-list__container__3-elements">
                   <div class="content-list__elements-container content-list__3-elements">
-                    <!-- PRIMERO: CONTENEDOR DE IMÁGENES -->
-                    <div class="content-element__img-container content-element__img-container--estufas">
-                      <!-- Imagen versión WEB (desktop / tablet) -->
-                      <img decoding="async" src="https://http2.mlstatic.com/D_NQ_NP_616469-MLA72574429478_112023-B.webp"
-                        class="content-element__image content-element__image--dynamic estufas-img-desktop"
-                        alt="Estufas" />
 
-                      <!-- Imagen versión CELULAR -->
-                      <img decoding="async" src="https://http2.mlstatic.com/D_NQ_NP_725291-MLA72574450780_112023-V.webp"
-                        class="content-element__image content-element__image--dynamic estufas-img-mobile"
-                        alt="Estufas versión móvil" />
-                    </div>
                     <!-- ESTUFAS -->
                     <div class="content-element content-element--align-center">
+                      <div class="content-element__img-container">
+                        <!-- Imagen versión WEB (desktop / tablet) -->
+                        <img decoding="async"
+                          src="https://http2.mlstatic.com/D_NQ_NP_616469-MLA72574429478_112023-B.webp"
+                          class="content-element__image content-element__image--dynamic estufas-img-desktop"
+                          alt="Estufas" />
 
+                        <!-- Imagen versión CELULAR -->
+                        <img decoding="async"
+                          src="https://http2.mlstatic.com/D_NQ_NP_725291-MLA72574450780_112023-V.webp"
+                          class="content-element__image content-element__image--dynamic estufas-img-mobile"
+                          alt="Estufas versión móvil" />
+                      </div>
 
-
-                      <!-- DESPUÉS: TEXTO Y BOTÓN -->
                       <div class="content-element__container-text">
                         <h3
                           class="typography content-element__title typography--type-title typography--size-small typography--weight-bold"
@@ -1844,8 +1898,6 @@
                         </div>
                       </div>
                     </div>
-
-
 
                     <!-- LAVADORAS -->
                     <div class="content-element content-element--align-center">
@@ -1890,6 +1942,7 @@
                     </div>
 
                   </div>
+
                 </div>
               </div>
             </div>
