@@ -147,8 +147,10 @@
 
       .content-element__image {
         width: 80% !important;
-        /* Ajusta aquí el tamaño de la imagen */
+        /* Tamaño de la imagen en cel */
+        max-width: 350px;
         height: auto !important;
+        display: block;
       }
 
       .content-element__container-text {
@@ -1724,9 +1726,12 @@
               <div class="content-list__container content-list__container--dynamic">
                 <div class="content-list__element content-list__container__3-elements">
                   <div class="content-list__elements-container content-list__3-elements">
+
+                    <!-- ESTUFAS -->
                     <div class="content-element content-element--align-center">
-                      <div class="content-element__img-container"><!-- ESTUFAS -->
-                        <img src="https://http2.mlstatic.com/D_NQ_NP_616469-MLA72574429478_112023-B.webp"
+                      <div class="content-element__img-container">
+                        <img decoding="async"
+                          src="https://http2.mlstatic.com/D_NQ_NP_616469-MLA72574429478_112023-B.webp"
                           class="content-element__image content-element__image--dynamic" alt="Estufas" />
                       </div>
                       <div class="content-element__container-text">
@@ -1742,12 +1747,14 @@
                         </div>
                       </div>
                     </div>
+
+                    <!-- LAVADORAS -->
                     <div class="content-element content-element--align-center">
-                      <div class="content-element__img-container"><img decoding="async"
-                          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                          class="content-element__image content-element__image--dynamic lazy-loadable"
-                          data-src="https://http2.mlstatic.com/D_NQ_NP_845399-MLA72645713069_112023-B.webp"
-                          alt="Lavadoras" /></div>
+                      <div class="content-element__img-container">
+                        <img decoding="async"
+                          src="https://http2.mlstatic.com/D_NQ_NP_845399-MLA72645713069_112023-B.webp"
+                          class="content-element__image content-element__image--dynamic" alt="Lavadoras" />
+                      </div>
                       <div class="content-element__container-text">
                         <h3
                           class="typography content-element__title typography--type-title typography--size-small typography--weight-bold"
@@ -1761,29 +1768,34 @@
                         </div>
                       </div>
                     </div>
+
+                    <!-- REFRIGERADORES -->
                     <div class="content-element content-element--align-center">
-                      <div class="content-element__img-container"><img decoding="async"
-                          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                          class="content-element__image content-element__image--dynamic lazy-loadable"
-                          data-src="https://http2.mlstatic.com/D_NQ_NP_828035-MLA72574323464_112023-B.webp"
-                          alt="Refrigeradores" /></div>
+                      <div class="content-element__img-container">
+                        <img decoding="async"
+                          src="https://http2.mlstatic.com/D_NQ_NP_828035-MLA72574323464_112023-B.webp"
+                          class="content-element__image content-element__image--dynamic" alt="Refrigeradores" />
+                      </div>
                       <div class="content-element__container-text">
                         <h3
                           class="typography content-element__title typography--type-title typography--size-small typography--weight-bold"
                           style="color:#1A1A1A" variant="h4">Refrigeradores</h3>
-                        <div class="content-element__button-container"><a
-                            href="listado/electrodomesticos/refrigerador/index.html"
+                        <div class="content-element__button-container">
+                          <a href="listado/electrodomesticos/refrigerador/index.html"
                             class="button button--secondary button--medium content-element__button">
                             <p class="typography typography--type-body typography--size-small typography--weight-semibold"
                               style="color:var(--colorOrBlackByPrimaryColor)">Aquí</p>
-                          </a></div>
+                          </a>
+                        </div>
                       </div>
                     </div>
+
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
           <div class="component-wrapper">
             <div style="display:contents"></div>
           </div>
