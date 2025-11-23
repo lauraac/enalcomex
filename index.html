@@ -57,61 +57,33 @@
       src: url(https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-semibold.woff2) format("woff2"), url(https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-semibold.woff) format("woff")
     }
 
-    /* Debajo de tus estilos normales del carrusel… */
-    /* =============================== */
-    /* 🟦 AJUSTE CARRUSEL EN CELULAR   */
-    /* =============================== */
-    @media (max-width: 768px) {
-
-      /* 2 tarjetas por fila */
-      .recommendations .andes-carousel-snapped__slide {
-        width: calc(50% - 12px) !important;
-        flex: 0 0 auto;
-        scroll-snap-align: start;
-      }
-
-      /* Habilitar scroll horizontal con el dedo */
-      .recommendations .andes-carousel-snapped.ui-ms-products-carousel {
-        overflow-x: auto !important;
-        overflow-y: hidden;
-        -webkit-overflow-scrolling: touch;
-        scroll-behavior: smooth;
-      }
-
-      /* Slides en fila */
-      .recommendations .andes-carousel-snapped__wrapper {
-        display: flex;
-      }
-
-      /* Ocultar flechas del carrusel */
-      .recommendations .ui-ms-products-carousel__control {
-        display: none !important;
-      }
-    }
-
     /* =============================================== */
-    /* 🟩 AJUSTE SECCIÓN “APROVECHA EL BENEFICIO…”     */
+    /* 🟩 SECCIÓN “APROVECHA EL BENEFICIO…” EN CELULAR */
     /* =============================================== */
-    /* 📱 Sección "Aprovecha / Elige tu medio / Recibe..." en CELULAR */
     @media (max-width: 768px) {
 
       /* El contenedor se vuelve carrusel horizontal */
       .site-shopping-info .container {
         display: flex !important;
         flex-wrap: nowrap !important;
-        /* que no se vayan abajo */
-        overflow-x: auto;
-        /* scroll horizontal con el dedo */
+        /* que no se bajen */
+        overflow-x: auto !important;
+        /* scroll horizontal */
         overflow-y: hidden;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
-        /* scroll suave en iPhone */
+        /* scroll suave iPhone */
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box;
       }
 
-      /* Cada slide = ocupa toda la pantalla */
+      /* Cada slide ocupa TODA la pantalla */
       .site-shopping-info .info-slide {
         flex: 0 0 100% !important;
-        /* 100% del ancho visible */
+        /* base 100% */
+        width: 100% !important;
+        /* por si arriba le ponen 50% */
         max-width: 100% !important;
         scroll-snap-align: center;
 
@@ -120,7 +92,7 @@
         box-sizing: border-box;
       }
 
-      /* Opcional: centrar bien el ícono */
+      /* Centrar bien el ícono */
       .site-shopping-info .info-slide .img-container svg,
       .site-shopping-info .info-slide .img-container img {
         display: block;
