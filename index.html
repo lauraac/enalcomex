@@ -56,61 +56,6 @@
       font-style: normal;
       src: url(https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-semibold.woff2) format("woff2"), url(https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-semibold.woff) format("woff")
     }
-
-    /* Carrusel en CELULAR: 2 productos por vista */
-    .ui-ms-products-carousel .andes-carousel-snapped__wrapper {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-    }
-
-    .ui-ms-products-carousel .andes-carousel-snapped__slide {
-      flex: 0 0 calc(50% - 12px) !important;
-      /* aprox. 2 por pantalla */
-      scroll-snap-align: start;
-    }
-
-    /* En pantallas grandes (tablet/desktop) seguimos con 4 por fila */
-    @media (min-width: 768px) {
-      .ui-ms-products-carousel .andes-carousel-snapped__slide {
-        flex: 0 0 calc(25% - 12px) !important;
-      }
-    }
-
-    /* Reducir lo largo de las tarjetas en celular */
-    .ui-ms-products-carousel .andes-carousel-snapped__slide img {
-      height: 160px;
-      /* ↓ ajusta esta altura a tu gusto */
-      object-fit: contain;
-      /* mantiene la imagen completa sin deformarse */
-    }
-
-    /* 🌟 Versión móvil: 1 slide por pantalla, deslizable */
-    .site-shopping-info .container {
-      display: flex;
-      overflow-x: auto;
-      /* permite deslizar horizontal */
-      scroll-snap-type: x mandatory;
-      /* que se “pegue” cada slide */
-      -webkit-overflow-scrolling: touch;
-      /* scroll suave en iOS */
-    }
-
-    .site-shopping-info .info-slide {
-      flex: 0 0 100%;
-      /* cada slide ocupa el 100% del ancho */
-      max-width: 100%;
-      scroll-snap-align: center;
-      padding: 24px 16px;
-      /* ajusta el espacio si lo quieres más corto */
-      box-sizing: border-box;
-      text-align: center;
-    }
-
-    /* Ocultar la barra de scroll en algunos navegadores (opcional) */
-    .site-shopping-info .container::-webkit-scrollbar {
-      display: none;
-    }
   </style>
   <link rel="canonical" href="https://www.enalcomex.com" data-head-react="true" />
   <link rel="icon"
