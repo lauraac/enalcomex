@@ -57,30 +57,34 @@
       src: url(https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-semibold.woff2) format("woff2"), url(https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-semibold.woff) format("woff")
     }
 
-    /* CARRUSEL DE PRODUCTOS: 2 tarjetas por vista en CELULAR */
     /* CARRUSEL DE PRODUCTOS (refrigerador, estufa, etc.) EN CELULAR */
     @media (max-width: 768px) {
 
-      /* Restaurar el comportamiento normal del carrusel */
+      /* El área visible del carrusel: scroll horizontal con el dedo */
       .recommendations .andes-carousel-snapped__viewport {
-        overflow-x: hidden !important;
+        overflow-x: auto !important;
         overflow-y: hidden !important;
-        -webkit-overflow-scrolling: auto !important;
-        scroll-snap-type: none !important;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
       }
 
+      /* La tira interna de tarjetas, en fila horizontal */
       .recommendations .andes-carousel-snapped__wrapper {
-        display: block !important;
-        transform: translate3d(0, 0, 0) !important;
-        /* dejamos que el JS lo cambie */
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        transform: none !important;
+        /* quitamos el translateX del JS */
       }
 
-      /* Solo cambiamos el ANCHO de cada tarjeta: 2 por vista */
+      /* Cada tarjeta de producto: 2 por pantalla */
       .recommendations .andes-carousel-snapped__slide {
-        width: 50% !important;
+        flex: 0 0 50% !important;
+        /* ocupa la mitad del ancho */
         max-width: 50% !important;
+        scroll-snap-align: start;
       }
     }
+
 
 
     /* CARRUSEL DE BENEFICIOS EN CELULAR */
