@@ -123,27 +123,31 @@
       }
     }
 
-    /* Ajuste sección beneficios (envío gratis / medio de pago) en CELULAR */
+    /* AJUSTE SECCIÓN BENEFICIOS EN CELULAR */
     @media (max-width: 768px) {
 
-      /* Contenedor de los beneficios */
-      .ui-ms-shopping-info__items,
-      .ui-ms-shopping-info {
+      /* Contenedor principal: se vuelve columna */
+      .site-shopping-info .container {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
       }
 
-      /* Cada tarjetita (envío gratis, medio de pago, etc.) */
-      .ui-ms-shopping-info__item {
-        width: 100% !important;
-        /* que use todo el ancho */
+      /* Cada bloque (envío gratis / medio de pago / entrega) */
+      .site-shopping-info .info-slide {
+        width: 100%;
         max-width: 320px;
-        /* para que no se haga gigante */
-        margin: 0 auto 24px;
-        /* centrado y con espacio abajo */
+        /* ancho bonito */
         text-align: center;
-        /* texto centrado como en Delta */
+        /* texto centrado */
+        margin-bottom: 32px;
+      }
+
+      /* Centrar icono */
+      .site-shopping-info .info-slide svg,
+      .site-shopping-info .info-slide img {
+        display: block;
+        margin: 16px auto 0;
       }
     }
   </style>
