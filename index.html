@@ -57,35 +57,14 @@
       src: url(https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-semibold.woff2) format("woff2"), url(https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-semibold.woff) format("woff")
     }
 
-    /* CARRUSEL DE PRODUCTOS (refrigerador, estufa, etc.) EN CELULAR */
+    /* Carrusel de productos en celular: solo permitir scroll */
     @media (max-width: 768px) {
-
-      /* El área visible del carrusel: scroll horizontal con el dedo */
       .recommendations .andes-carousel-snapped__viewport {
         overflow-x: auto !important;
         overflow-y: hidden !important;
         -webkit-overflow-scrolling: touch;
-        scroll-snap-type: x mandatory;
-      }
-
-      /* La tira interna de tarjetas, en fila horizontal */
-      .recommendations .andes-carousel-snapped__wrapper {
-        display: flex !important;
-        flex-wrap: nowrap !important;
-        transform: none !important;
-        /* quitamos el translateX del JS */
-      }
-
-      /* Cada tarjeta de producto: 2 por pantalla */
-      .recommendations .andes-carousel-snapped__slide {
-        flex: 0 0 50% !important;
-        /* ocupa la mitad del ancho */
-        max-width: 50% !important;
-        scroll-snap-align: start;
       }
     }
-
-
 
     /* CARRUSEL DE BENEFICIOS EN CELULAR */
     @media (max-width: 768px) {
