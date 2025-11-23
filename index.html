@@ -57,9 +57,39 @@
       src: url(https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-semibold.woff2) format("woff2"), url(https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-semibold.woff) format("woff")
     }
 
+    /* Debajo de tus estilos normales del carrusel… */
+
     @media (max-width: 768px) {
+
+      /* lo que ya tenías */
       .recommendations .andes-carousel-snapped__slide {
         width: calc(50% - 12px) !important;
+      }
+
+      /* ✨ Hacer que el carrusel se pueda desplazar con el dedo */
+      .recommendations .andes-carousel-snapped.ui-ms-products-carousel {
+        overflow-x: auto !important;
+        /* permite scroll horizontal */
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        /* scroll suave en iPhone */
+        scroll-behavior: smooth;
+      }
+
+      /* Aseguramos que las slides se pongan en fila */
+      .recommendations .andes-carousel-snapped__wrapper {
+        display: flex;
+      }
+
+      /* Que cada tarjeta “encaje” al hacer scroll (opcional) */
+      .recommendations .andes-carousel-snapped__slide {
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+      }
+
+      /* Opcional: ocultar flechas en móvil si quieres que solo se deslice con el dedo */
+      .recommendations .ui-ms-products-carousel__control {
+        display: none !important;
       }
     }
   </style>
