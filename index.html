@@ -92,28 +92,37 @@
     /* =============================================== */
     /* 🟩 AJUSTE SECCIÓN “APROVECHA EL BENEFICIO…”     */
     /* =============================================== */
+    /* CARRUSEL EN CELULAR: 1 PRODUCTO POR VISTA */
     @media (max-width: 768px) {
 
-      /* El contenedor pasa de columna a vertical */
-      .site-shopping-info .container {
+      /* contenedor del carrusel: permite scroll horizontal */
+      .recommendations .andes-carousel-snapped.ui-ms-products-carousel {
+        overflow-x: auto !important;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+        /* que “encaje” cada tarjeta */
+      }
+
+      /* las slides en fila */
+      .recommendations .andes-carousel-snapped__wrapper {
         display: flex;
-        flex-direction: column;
-        align-items: center;
       }
 
-      /* Cada bloque de texto/icono */
-      .site-shopping-info .info-slide {
-        width: 100%;
-        max-width: 320px;
-        text-align: center;
-        margin-bottom: 32px;
+      /* cada tarjeta ocupa casi todo el ancho de la pantalla */
+      .recommendations .andes-carousel-snapped__slide {
+        flex: 0 0 90%;
+        /* ~90% del ancho visible */
+        max-width: 90%;
+        scroll-snap-align: center;
+        padding: 0 8px;
+        /* un poquito de aire a los lados */
       }
 
-      /* Centrar iconos */
-      .site-shopping-info .info-slide svg,
-      .site-shopping-info .info-slide img {
-        display: block;
-        margin: 16px auto 0;
+      /* opcional: ocultar flechas en móvil */
+      .recommendations .ui-ms-products-carousel__control {
+        display: none !important;
       }
     }
   </style>
