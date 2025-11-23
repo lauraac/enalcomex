@@ -57,27 +57,47 @@
       src: url(https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-semibold.woff2) format("woff2"), url(https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-semibold.woff) format("woff")
     }
 
-    /* 📱 Sección "Aprovecha / Elige tu medio / Recibe..." en CELULAR */
+    @media (max-width: 768px) {
+      .recommendations .andes-carousel-snapped__slide {
+        width: calc(50% - 12px) !important;
+        /* 2 tarjetas por vista */
+      }
+
+      /* No tocamos más nada del carrusel para no romperlo */
+    }
+
+    /* ===================================================== */
+    /* 2) SECCIÓN BENEFICIOS "APROVECHA / ELIGE / RECIBE"    */
+    /*    → Cada .info-slide ocupa TODA la pantalla          */
+    /*    → Se desliza con el dedo de lado a lado            */
+    /* ===================================================== */
     @media (max-width: 768px) {
 
+      /* Contenedor como carrusel horizontal */
       .site-shopping-info .container {
         display: flex !important;
         flex-wrap: nowrap !important;
+        /* que no se vayan abajo */
         overflow-x: auto;
+        /* scroll horizontal */
         overflow-y: hidden;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
+        /* suave en iPhone */
       }
 
+      /* Cada slide ocupa el 100% del ancho visible */
       .site-shopping-info .info-slide {
         flex: 0 0 100% !important;
         max-width: 100% !important;
         scroll-snap-align: center;
+
         text-align: center;
         padding: 24px 16px;
         box-sizing: border-box;
       }
 
+      /* Centrar icono */
       .site-shopping-info .info-slide .img-container svg,
       .site-shopping-info .info-slide .img-container img {
         display: block;
