@@ -58,13 +58,29 @@
     }
 
     /* Carrusel de productos en celular: solo permitir scroll */
+    /* 📱 Solo versión celular */
     @media (max-width: 768px) {
-      .recommendations .andes-carousel-snapped__viewport {
-        overflow-x: auto !important;
-        overflow-y: hidden !important;
+
+      /* Contenedor del carrusel (el que tiene las tarjetas) */
+      section[aria-label="products-carousel"] .andes-carousel-snapped {
+        overflow-x: auto;
+        /* permite scroll horizontal */
         -webkit-overflow-scrolling: touch;
+        /* deslizamiento suave con el dedo */
+      }
+
+      /* Wrapper interno donde van todas las tarjetas */
+      section[aria-label="products-carousel"] .andes-carousel-snapped__wrapper {
+        display: flex;
+      }
+
+      /* Cada tarjeta una al lado de la otra y scrollable */
+      section[aria-label="products-carousel"] .andes-carousel-snapped__slide {
+        flex: 0 0 auto;
+        scroll-snap-align: start;
       }
     }
+
 
     /* CARRUSEL DE BENEFICIOS EN CELULAR */
     @media (max-width: 768px) {
