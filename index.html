@@ -57,14 +57,32 @@
       src: url(https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-semibold.woff2) format("woff2"), url(https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-semibold.woff) format("woff")
     }
 
+    /* 1) Carrusel de REFRIGERADORES / productos (.recommendations) */
     @media (max-width: 768px) {
-      .recommendations .andes-carousel-snapped__slide {
-        width: calc(50% - 12px) !important;
-        /* 2 tarjetas por vista */
+
+      /* El “viewport” del carrusel: que se pueda desplazar con el dedo */
+      .recommendations .andes-carousel-snapped__viewport {
+        overflow-x: auto !important;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        /* suave en iPhone */
+        scroll-snap-type: x mandatory;
+        /* que “encaje” cada slide */
       }
 
-      /* No tocamos más nada del carrusel para no romperlo */
+      /* La lista interna se vuelve una fila horizontal */
+      .recommendations .andes-carousel-snapped__wrapper {
+        display: inline-flex !important;
+      }
+
+      /* Cada tarjeta: 2 por pantalla */
+      .recommendations .andes-carousel-snapped__slide {
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+        scroll-snap-align: start;
+      }
     }
+
 
     /* ===================================================== */
     /* 2) SECCIÓN BENEFICIOS "APROVECHA / ELIGE / RECIBE"    */
