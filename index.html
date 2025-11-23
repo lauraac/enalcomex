@@ -58,92 +58,58 @@
     }
 
     /* Debajo de tus estilos normales del carrusel… */
-
+    /* =============================== */
+    /* 🟦 AJUSTE CARRUSEL EN CELULAR   */
+    /* =============================== */
     @media (max-width: 768px) {
 
-      /* lo que ya tenías */
+      /* 2 tarjetas por fila */
       .recommendations .andes-carousel-snapped__slide {
         width: calc(50% - 12px) !important;
-      }
-
-      /* ✨ Hacer que el carrusel se pueda desplazar con el dedo */
-      .recommendations .andes-carousel-snapped.ui-ms-products-carousel {
-        overflow-x: auto !important;
-        /* permite scroll horizontal */
-        overflow-y: hidden;
-        -webkit-overflow-scrolling: touch;
-        /* scroll suave en iPhone */
-        scroll-behavior: smooth;
-      }
-
-      /* Aseguramos que las slides se pongan en fila */
-      .recommendations .andes-carousel-snapped__wrapper {
-        display: flex;
-      }
-
-      /* Que cada tarjeta “encaje” al hacer scroll (opcional) */
-      .recommendations .andes-carousel-snapped__slide {
         flex: 0 0 auto;
         scroll-snap-align: start;
       }
 
-      /* Opcional: ocultar flechas en móvil si quieres que solo se deslice con el dedo */
+      /* Habilitar scroll horizontal con el dedo */
+      .recommendations .andes-carousel-snapped.ui-ms-products-carousel {
+        overflow-x: auto !important;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+      }
+
+      /* Slides en fila */
+      .recommendations .andes-carousel-snapped__wrapper {
+        display: flex;
+      }
+
+      /* Ocultar flechas del carrusel */
       .recommendations .ui-ms-products-carousel__control {
         display: none !important;
       }
     }
 
-    /* AJUSTE SECCIÓN "APROVECHA EL BENEFICIO / ELIGE TU MEDIO DE PAGO" EN CELULAR */
+    /* =============================================== */
+    /* 🟩 AJUSTE SECCIÓN “APROVECHA EL BENEFICIO…”     */
+    /* =============================================== */
     @media (max-width: 768px) {
 
-      /* contenedor de los ítems de esa sección */
-      .shopping-info .content-list,
-      .shopping-info .content-list-desktop,
-      .shopping-info .content-list__items {
-        display: flex;
-        flex-direction: column;
-        /* uno debajo del otro */
-        align-items: center;
-        text-align: center;
-      }
-
-      /* cada “tarjeta” de texto + icono */
-      .shopping-info .content-list__item {
-        width: 100%;
-        max-width: 280px;
-        /* no tan ancho, se ve más lindo */
-        margin: 0 auto 24px;
-      }
-
-      /* por si el icono queda chueco */
-      .shopping-info .content-list__item img,
-      .shopping-info .content-list__item svg {
-        display: block;
-        margin: 16px auto 0;
-      }
-    }
-
-    /* AJUSTE SECCIÓN BENEFICIOS EN CELULAR */
-    @media (max-width: 768px) {
-
-      /* Contenedor principal: se vuelve columna */
+      /* El contenedor pasa de columna a vertical */
       .site-shopping-info .container {
         display: flex;
         flex-direction: column;
         align-items: center;
       }
 
-      /* Cada bloque (envío gratis / medio de pago / entrega) */
+      /* Cada bloque de texto/icono */
       .site-shopping-info .info-slide {
         width: 100%;
         max-width: 320px;
-        /* ancho bonito */
         text-align: center;
-        /* texto centrado */
         margin-bottom: 32px;
       }
 
-      /* Centrar icono */
+      /* Centrar iconos */
       .site-shopping-info .info-slide svg,
       .site-shopping-info .info-slide img {
         display: block;
