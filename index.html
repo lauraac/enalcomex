@@ -58,12 +58,30 @@
     }
 
     /* CARRUSEL DE PRODUCTOS: 2 tarjetas por vista en CELULAR */
+    /* CARRUSEL DE PRODUCTOS (refrigerador, estufa, etc.) EN CELULAR */
     @media (max-width: 768px) {
+
+      /* Restaurar el comportamiento normal del carrusel */
+      .recommendations .andes-carousel-snapped__viewport {
+        overflow-x: hidden !important;
+        overflow-y: hidden !important;
+        -webkit-overflow-scrolling: auto !important;
+        scroll-snap-type: none !important;
+      }
+
+      .recommendations .andes-carousel-snapped__wrapper {
+        display: block !important;
+        transform: translate3d(0, 0, 0) !important;
+        /* dejamos que el JS lo cambie */
+      }
+
+      /* Solo cambiamos el ANCHO de cada tarjeta: 2 por vista */
       .recommendations .andes-carousel-snapped__slide {
-        width: calc(50% - 12px) !important;
-        /* 2 por pantalla */
+        width: 50% !important;
+        max-width: 50% !important;
       }
     }
+
 
     /* CARRUSEL DE BENEFICIOS EN CELULAR */
     @media (max-width: 768px) {
