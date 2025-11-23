@@ -56,12 +56,6 @@
       font-style: normal;
       src: url(https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-semibold.woff2) format("woff2"), url(https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-semibold.woff) format("woff")
     }
-
-    @media (max-width: 768px) {
-      .recommendations .andes-carousel-snapped__slide {
-        width: calc(50% - 12px) !important;
-      }
-    }
   </style>
   <link rel="canonical" href="https://www.enalcomex.com" data-head-react="true" />
   <link rel="icon"
@@ -2311,60 +2305,8 @@ melidata("send", "view", {
               });
             }
           })(window, document, 'trustedTypes');</script>
-  <!-- Script de New Relic (mismo que ya tienes, pero dentro del body) -->
-  <script nonce="K7/S/un8bV1iK7OcteXDaw==">
-        (function (n, a) {
-          if (n) {
-            n.addRelease('mshops-web-home', '2019.96.10-shops');
-            n.setApplicationVersion('2019.96.10-shops');
-            n[a]('nordicVersion', '8.28.0');
-            n[a]('frontend_session_id', '23c8ea62-f29f-4801-9bbe-25a9d60c3a26');
-          }
-        })(window.newrelic, 'setCustomAttribute');
-  </script>
-
-  <!-- Script para que las flechas del carrusel ENALCOMEX sí funcionen -->
-  <script>
-        document.addEventListener("DOMContentLoaded", function () {
-          // Carrusel solo dentro de la sección recommendations (ENALCOMEX)
-          const carousel = document.querySelector(
-            ".recommendations .andes-carousel-snapped.ui-ms-products-carousel"
-          );
-
-          const btnNext = document.querySelector(
-            ".recommendations [data-andes-carousel-snapped-control='next']"
-          );
-          const btnPrev = document.querySelector(
-            ".recommendations [data-andes-carousel-snapped-control='previous']"
-          );
-
-          if (!carousel || !btnNext || !btnPrev) {
-            console.log("No encontré el carrusel de ENALCOMEX");
-            return;
-          }
-
-          function getStep() {
-            // En cel se mueve de a una tarjeta
-            const slide = carousel.querySelector(".andes-carousel-snapped__slide");
-            if (!slide) return 300;
-            const style = window.getComputedStyle(slide);
-            const marginRight = parseFloat(style.marginRight || "0");
-            return slide.offsetWidth + marginRight;
-          }
-
-          btnNext.addEventListener("click", function () {
-            carousel.scrollBy({ left: getStep(), behavior: "smooth" });
-          });
-
-          btnPrev.addEventListener("click", function () {
-            carousel.scrollBy({ left: -getStep(), behavior: "smooth" });
-          });
-        });
-  </script>
 </body>
-
-</html>
-
-</body>
+<script
+  nonce="K7/S/un8bV1iK7OcteXDaw==">(function (n, a) { if (n) { n.addRelease('mshops-web-home', '2019.96.10-shops'); n.setApplicationVersion('2019.96.10-shops'); n[a]('nordicVersion', '8.28.0'); n[a]('frontend_session_id', '23c8ea62-f29f-4801-9bbe-25a9d60c3a26'); } })(window.newrelic, 'setCustomAttribute')</script>
 
 </html>
