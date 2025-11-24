@@ -56,6 +56,14 @@
       font-style: normal;
       src: url(https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-semibold.woff2) format("woff2"), url(https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-semibold.woff) format("woff")
     }
+
+    /* Esconde toda la fila del breadcrumb en la ficha del producto */
+    .ui-pdp-container__row--breadcrumb,
+    #breadcrumb,
+    .ui-pdp-breadcrumb,
+    .ui-pdp-container--breadcrumb-related {
+      display: none !important;
+    }
   </style>
   <link rel="icon"
     href="https://http2.mlstatic.com/storage/mshops-appearance-api/images/62/663881662/logo-2023110213232148311.png"
@@ -1956,7 +1964,8 @@
                 <span class="dynamic-footer-info__separator"> | </span>
                 <a href="https://enalcomex.com.mx/p/privacidad/index.html">¿Cómo cuidamos tu privacidad?</a>
                 <span class="dynamic-footer-info__separator"> | </span>
-                <a href="https://enalcomex.com.mx/p/programa-compra-protegida/index.html" class="dynamic-footer-info__link-protected">Compra protegida</a>
+                <a href="https://enalcomex.com.mx/p/programa-compra-protegida/index.html"
+                  class="dynamic-footer-info__link-protected">Compra protegida</a>
                 <span class="dynamic-footer-info__separator"> | </span>
                 <a href="https://enalcomex.com.mx/privacy-preferences/cookies/index.html">Configurar cookies</a>
               </div>
@@ -1993,7 +2002,8 @@
             <span class="dynamic-footer-info__separator"> | </span>
 
 
-            <a href="https://enalcomex.com.mx/p/programa-compra-protegida/index.html" class="dynamic-footer-info__link-protected">Compra protegida</a>
+            <a href="https://enalcomex.com.mx/p/programa-compra-protegida/index.html"
+              class="dynamic-footer-info__link-protected">Compra protegida</a>
             <span class="dynamic-footer-info__separator"> | </span>
 
 
